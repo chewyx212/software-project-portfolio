@@ -13,7 +13,7 @@ const featuredProjects = projects.filter((project) => project.data.featured);
 const supportingProjects = projects.filter((project) => !project.data.featured);
 const projectLabels: Record<string, string> = {
   "fleetvigo-oms": "Operations Platform",
-  "feedme-payment": "Payments Integration",
+  "feedme-payment": "Merchant Platform",
   ezsub: "Enterprise Platform",
 };
 
@@ -95,59 +95,48 @@ const projectSiteLabels: Record<string, string> = {
           </ul>
         </div>
 
-        <div class="hero-stage" aria-hidden="true">
+        <div class="hero-stage">
           <div class="hero-glow hero-glow--cyan"></div>
           <div class="hero-glow hero-glow--amber"></div>
 
-          <div class="showcase-plane showcase-plane--primary glass-panel" data-stage-layer data-depth>
-            <div class="stage-card">
-              <div class="stage-card__top">
-                <span class="screen-label">System Snapshot</span>
-                <span class="stage-badge">Selected Work</span>
-              </div>
+          <div class="hero-stack" data-stage-layer data-depth>
+            <article class="hero-stat-card hero-stat-card--lead glass-panel">
+              <p class="screen-label">{siteMetadata.hero.snapshotCards[0].eyebrow}</p>
+              <strong>{siteMetadata.hero.snapshotCards[0].value}</strong>
+              <p>{siteMetadata.hero.snapshotCards[0].detail}</p>
+            </article>
 
-              <h2>Operational software designed for clarity, control, and daily use.</h2>
-
-              <ul class="stage-list">
+            <article class="hero-stat-card hero-stat-card--domains glass-panel">
+              <p class="screen-label">{siteMetadata.hero.snapshotCards[1].eyebrow}</p>
+              <div class="hero-stat-card__chips">
                 {
-                  siteMetadata.hero.proofPoints.map((item) => (
+                  siteMetadata.hero.snapshotCards[1].items?.map((item) => (
+                    <span>{item}</span>
+                  ))
+                }
+              </div>
+            </article>
+
+            <article class="hero-stat-card hero-stat-card--work glass-panel">
+              <p class="screen-label">{siteMetadata.hero.snapshotCards[2].eyebrow}</p>
+              <ul class="hero-stat-card__list">
+                {
+                  siteMetadata.hero.snapshotCards[2].items?.map((item) => (
                     <li>{item}</li>
                   ))
                 }
               </ul>
-
-              <figure class="hero-shot">
-                <img
-                  class="stage-screen"
-                  src="/project-screens/fleetvigo-dashboard-crop.png"
-                  alt=""
-                  loading="eager"
-                />
-              </figure>
-            </div>
+            </article>
           </div>
-
-          <div class="showcase-plane showcase-plane--secondary" data-stage-layer>
-            <span>{siteMetadata.availability}</span>
-            <div class="mini-orbit">
-              <span>Fintech</span>
-              <span>Insurance</span>
-              <span>Payments</span>
-              <span>Operations</span>
-            </div>
-          </div>
-
-          <div class="showcase-ring" data-stage-layer></div>
         </div>
       </section>
 
       <section class="section" id="work">
         <div class="section-heading" data-reveal>
           <p class="section-kicker">Selected Work</p>
-          <h2>Selected work across payments, insurance, and operations.</h2>
+          <h2>Work across insurance, merchant software, and operations.</h2>
           <p>
-            These projects reflect the kind of software I enjoy building most: products with
-            real business use, operational depth, and interfaces that need to feel clear and dependable.
+            Products built for real use, operational depth, and dependable delivery.
           </p>
         </div>
 
@@ -157,6 +146,7 @@ const projectSiteLabels: Record<string, string> = {
               <article
                 class:list={[
                   "project-story",
+                  "project-card",
                   index % 2 === 1 && "project-story--reverse",
                 ]}
                 data-reveal
@@ -164,7 +154,7 @@ const projectSiteLabels: Record<string, string> = {
                 <div class="project-story__copy">
                   <p class="project-label">{projectLabels[project.id]}</p>
 
-                  <div class="project-story__title-row">
+                  <div class="project-story__title-block">
                     <h3>{project.data.title}</h3>
                     {
                       project.data.liveUrl ? (
@@ -174,7 +164,8 @@ const projectSiteLabels: Record<string, string> = {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          {projectSiteLabels[project.id] ?? "Official site"}
+                          <span>{projectSiteLabels[project.id] ?? "Official site"}</span>
+                          <span class="project-link__arrow" aria-hidden="true">-&gt;</span>
                         </a>
                       ) : null
                     }
@@ -288,7 +279,7 @@ const projectSiteLabels: Record<string, string> = {
       <section class="section">
         <div class="section-heading" data-reveal>
           <p class="section-kicker">Additional Experience</p>
-          <h2>Other products built around useful, real-world workflows.</h2>
+          <h2>Other products built for real workflows.</h2>
         </div>
 
         <div class="supporting-grid" data-reveal>
@@ -304,17 +295,26 @@ const projectSiteLabels: Record<string, string> = {
         </div>
       </section>
 
-      <section class="section" id="about">
+      <section class="section section--about" id="about">
         <div class="section-heading" data-reveal>
           <p class="section-kicker">{siteMetadata.about.kicker}</p>
           <h2>{siteMetadata.about.title}</h2>
+          <p>{siteMetadata.about.lead}</p>
         </div>
 
         <div class="about-layout">
           <div class="about-copy glass-panel" data-reveal>
-            <figure class="about-portrait">
-              <img src="/me.png" alt={`${siteMetadata.name} portrait`} loading="lazy" />
-            </figure>
+            <div class="about-copy__intro">
+              <figure class="about-portrait">
+                <img src="/me.png" alt={`${siteMetadata.name} portrait`} loading="lazy" />
+              </figure>
+              <div class="about-copy__header">
+                <p class="section-kicker">Profile</p>
+                <h3>{siteMetadata.name}</h3>
+                <p class="about-copy__role">{siteMetadata.role}</p>
+                <p class="about-copy__summary">{siteMetadata.about.summary}</p>
+              </div>
+            </div>
             <div class="about-copy__text">
               {
                 siteMetadata.about.paragraphs.map((paragraph) => (
@@ -324,15 +324,28 @@ const projectSiteLabels: Record<string, string> = {
             </div>
           </div>
 
-          <div class="about-highlights glass-panel" data-reveal>
-            <p class="fit-title">Why that matters to a founder:</p>
-            <ul class="fit-list">
-              {
-                siteMetadata.about.highlights.map((item) => (
-                  <li>{item}</li>
-                ))
-              }
-            </ul>
+          <div class="about-sidebar">
+            <div class="about-highlights glass-panel" data-reveal>
+              <p class="fit-title">Where I add the most value</p>
+              <ul class="fit-list">
+                {
+                  siteMetadata.about.highlights.map((item) => (
+                    <li>{item}</li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="about-highlights glass-panel" data-reveal>
+              <p class="fit-title">How I usually work</p>
+              <ul class="fit-list">
+                {
+                  siteMetadata.hero.proofPoints.map((item) => (
+                    <li>{item}</li>
+                  ))
+                }
+              </ul>
+            </div>
           </div>
         </div>
       </section>
