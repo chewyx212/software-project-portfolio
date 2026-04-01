@@ -248,7 +248,7 @@ main,
 .hero-copy {
   display: grid;
   align-content: center;
-  max-width: 35rem;
+  max-width: 42rem;
 }
 
 .hero-identity {
@@ -350,7 +350,7 @@ h3 {
   margin: 1rem 0 0;
   color: var(--muted-strong);
   font-size: clamp(1.06rem, 1.45vw, 1.28rem);
-  max-width: 27ch;
+  max-width: none;
   line-height: 1.28;
 }
 
