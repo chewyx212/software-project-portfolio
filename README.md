@@ -1,46 +1,67 @@
-# Astro Starter Kit: Basics
+# Paul Chew — Software Portfolio
 
-```sh
-pnpm create astro@latest -- --template basics
+Personal portfolio site for Paul Chew, a frontend-focused full stack engineer based in Malaysia. Built with Astro, pure CSS, and GSAP animations.
+
+## Tech Stack
+
+- **[Astro](https://astro.build)** v6 — static site generator, file-based routing
+- **Pure CSS** — custom properties as design tokens, no CSS framework
+- **GSAP** v3 + ScrollTrigger — scroll-based and load animations
+- **Astro Content Collections** — Markdown-driven project data with Zod schema validation
+- **TypeScript** (strict mode)
+
+## Getting Started
+
+```bash
+npm install
+npm run dev       # localhost:4321
+npm run build     # production build → ./dist/
+npm run preview   # preview production build
+npm run check     # TypeScript / Astro type checking
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Content
 
-## 🚀 Project Structure
+### Adding or editing a project
 
-Inside of your Astro project, you'll see the following folders and files:
+Create or edit a Markdown file in `src/content/projects/`. Required front matter fields:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```yaml
+---
+title: Project Name
+tagline: One-line description
+summary: Short paragraph for the supporting projects grid
+year: "2024"
+role: Your role on the project
+stack: [React, Node.js, PostgreSQL]
+outcome: What was delivered or achieved
+coverImage: /project-covers/your-image.svg
+featured: true          # true = featured work section, false = other work grid
+order: 1                # sort order within featured/supporting groups
+visibility: public-case-study   # or private-summary
+---
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Optional fields: `screens` (array of image URLs), `liveUrl`, `repoUrl`.
 
-## 🧞 Commands
+### Editing site copy
 
-All commands are run from the root of the project, from a terminal:
+All hero text, about section, contact details, social links, and CTAs are in `src/data/site.ts` — one exported `siteMetadata` object.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Project Structure
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+src/
+├── pages/index.astro          # Single page — all sections
+├── layouts/Layout.astro       # HTML shell, SEO meta tags
+├── components/
+│   ├── MotionController.astro # GSAP animation orchestration
+│   └── SocialIcon.astro       # SVG social icons
+├── content/projects/          # Markdown project files
+├── data/site.ts               # All site copy and metadata
+└── styles/global.css          # Single global stylesheet
+public/
+├── project-covers/            # Cover images (SVG)
+├── project-screens/           # Detail screenshots
+└── documents/                 # Resume PDF
+```

@@ -33,3 +33,9 @@ GSAP v3 with ScrollTrigger handles all animations. Logic is centralized in `src/
 ### Layout
 
 `src/layouts/Layout.astro` wraps every page with the HTML shell, imports global CSS, and accepts `title`/`description` props for SEO/OpenGraph meta tags.
+
+### Responsive Behaviour
+
+- **Header:** At `≤720px`, the header collapses to a compact pill showing only the avatar + CTA button (`.brand-copy` is hidden via `display: none`). At larger breakpoints the full brand name and role are visible.
+- **Typography:** All heading sizes use `clamp()`. Mobile overrides (inside `@media (max-width: 720px)`) tighten the bounds: H1 `clamp(2.4rem, 10vw, 3.2rem)`, H2 `clamp(1.9rem, 8vw, 2.6rem)`.
+- **Supporting projects grid:** 3 columns on desktop, collapses to 1 column at `≤980px`.
