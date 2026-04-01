@@ -1,0 +1,53 @@
+<svg width="620" height="1200" viewBox="0 0 620 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="620" height="1200" rx="44" fill="#F6F7FC"/>
+  <rect x="0" y="0" width="620" height="88" rx="44" fill="white"/>
+  <text x="30" y="56" fill="#3D8BDC" font-family="Arial, sans-serif" font-size="24" font-weight="700">Close</text>
+  <text x="170" y="56" fill="#1D1F27" font-family="Arial, sans-serif" font-size="24" font-weight="700">feedmedev.cc</text>
+
+  <rect x="0" y="88" width="620" height="238" fill="#FF9A4D"/>
+  <rect x="40" y="118" width="480" height="62" rx="10" fill="#4CC969"/>
+  <text x="92" y="157" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">Successfully added</text>
+  <rect x="32" y="204" width="548" height="64" rx="14" fill="#FFB173" stroke="rgba(255,255,255,0.6)"/>
+  <text x="66" y="245" fill="white" font-family="Arial, sans-serif" font-size="24">Search by name or code</text>
+
+  <text x="34" y="316" fill="white" font-family="Arial, sans-serif" font-size="24">Starters</text>
+  <text x="146" y="316" fill="white" font-family="Arial, sans-serif" font-size="24">Main Courses</text>
+  <rect x="332" y="280" width="136" height="56" rx="8" fill="#FF7E28"/>
+  <text x="363" y="316" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">Desserts</text>
+  <text x="496" y="316" fill="white" font-family="Arial, sans-serif" font-size="24">Drinks</text>
+
+  <text x="26" y="402" fill="#383C44" font-family="Arial, sans-serif" font-size="52" font-weight="700">Desserts</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="0" y="444" width="620" height="148" fill="white"/>
+    <rect x="26" y="466" width="104" height="104" rx="10" fill="#E8D2B4"/>
+    <text x="154" y="514" fill="#33363F" font-size="38" font-weight="700">D01. Ice Cream</text>
+    <text x="154" y="560" fill="#A6AAB4" font-size="28">So sweet</text>
+    <text x="580" y="514" fill="#20242C" font-size="38" font-weight="700" text-anchor="end">8.90</text>
+
+    <rect x="0" y="592" width="620" height="148" fill="white"/>
+    <rect x="0" y="592" width="10" height="148" fill="#FF8D3B"/>
+    <rect x="26" y="614" width="104" height="104" rx="10" fill="#D3C0A1"/>
+    <text x="154" y="662" fill="#F28A47" font-size="38" font-weight="700">1x D02. Waffle</text>
+    <text x="154" y="708" fill="#A6AAB4" font-size="28">Sweet Treats for two</text>
+    <text x="580" y="662" fill="#20242C" font-size="38" font-weight="700" text-anchor="end">18.90</text>
+
+    <rect x="0" y="740" width="620" height="148" fill="white"/>
+    <rect x="26" y="762" width="104" height="104" rx="10" fill="#D4C3B7"/>
+    <text x="154" y="810" fill="#33363F" font-size="38" font-weight="700">D03. Pudding</text>
+    <text x="154" y="856" fill="#A6AAB4" font-size="28">Pudding put me.</text>
+    <text x="580" y="810" fill="#20242C" font-size="38" font-weight="700" text-anchor="end">18.90</text>
+
+    <rect x="0" y="888" width="620" height="148" fill="white"/>
+    <rect x="26" y="910" width="104" height="104" rx="10" fill="#D9B899"/>
+    <text x="154" y="958" fill="#33363F" font-size="38" font-weight="700">D04. Enchanting Parfait</text>
+    <text x="580" y="958" fill="#20242C" font-size="38" font-weight="700" text-anchor="end">12.90</text>
+  </g>
+
+  <rect x="0" y="1042" width="620" height="104" fill="white"/>
+  <text x="26" y="1092" fill="#7D818C" font-family="Arial, sans-serif" font-size="28">Dine In</text>
+  <text x="26" y="1128" fill="#A6AAB4" font-family="Arial, sans-serif" font-size="24">Table Table02</text>
+  <circle cx="312" cy="1094" r="30" fill="#F6F7FC" stroke="#D9DDE8"/>
+  <rect x="364" y="1042" width="256" height="104" fill="#FF9A4D"/>
+  <text x="580" y="1106" fill="white" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="end">36.90</text>
+</svg>

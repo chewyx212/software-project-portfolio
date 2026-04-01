@@ -1,0 +1,383 @@
+---
+import { getCollection } from "astro:content";
+import MotionController from "../components/MotionController.astro";
+import SocialIcon from "../components/SocialIcon.astro";
+import { siteMetadata } from "../data/site";
+import Layout from "../layouts/Layout.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (left, right) => left.data.order - right.data.order,
+);
+
+const featuredProjects = projects.filter((project) => project.data.featured);
+const supportingProjects = projects.filter((project) => !project.data.featured);
+const projectLabels: Record<string, string> = {
+  "fleetvigo-oms": "Operations Platform",
+  "feedme-payment": "Payments Integration",
+  ezsub: "Enterprise Platform",
+};
+
+const projectSiteLabels: Record<string, string> = {
+  "feedme-payment": "Official FeedMe site",
+  ezsub: "UX Design Awards case study",
+};
+---
+
+<Layout title={`${siteMetadata.name} | Portfolio`} description={siteMetadata.description}>
+  <div class="page-shell">
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark brand-mark--photo">
+          <img src="/avatar-circle.png" alt="" loading="eager" />
+        </span>
+        <span class="brand-copy">
+          <strong>{siteMetadata.name}</strong>
+          <small>{siteMetadata.role}</small>
+        </span>
+      </a>
+
+      <a
+        class="header-cta"
+        href={siteMetadata.primaryCTA.href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {siteMetadata.primaryCTA.label}
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="hero-identity" data-hero-item>
+            <div class="hero-identity__copy">
+              <p class="section-kicker">{siteMetadata.hero.kicker}</p>
+              <p class="hero-identity__note">{siteMetadata.availability}</p>
+            </div>
+          </div>
+          <h1 data-hero-item>{siteMetadata.name}</h1>
+          <p class="hero-offer" data-hero-item>{siteMetadata.hero.offerLead}</p>
+          <p class="hero-summary" data-hero-item>{siteMetadata.hero.summary}</p>
+
+          <div class="hero-actions" data-hero-item>
+            <a
+              class="button button--primary"
+              href={siteMetadata.primaryCTA.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {siteMetadata.primaryCTA.label}
+            </a>
+            <a class="button button--secondary" href={siteMetadata.secondaryCTA.href}>
+              {siteMetadata.secondaryCTA.label}
+            </a>
+          </div>
+
+          <ul class="hero-socials" aria-label="Social links" data-hero-item>
+            {
+              siteMetadata.socialLinks.map((socialLink) => (
+                <li>
+                  <a href={socialLink.href} target="_blank" rel="noreferrer" aria-label={socialLink.label}>
+                    <SocialIcon name={socialLink.id} />
+                    <span>{socialLink.label}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+
+          <ul class="hero-proof" data-hero-item>
+            {
+              siteMetadata.hero.credibility.map((item) => (
+                <li>{item}</li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="hero-stage" aria-hidden="true">
+          <div class="hero-glow hero-glow--cyan"></div>
+          <div class="hero-glow hero-glow--amber"></div>
+
+          <div class="showcase-plane showcase-plane--primary glass-panel" data-stage-layer data-depth>
+            <div class="stage-card">
+              <div class="stage-card__top">
+                <span class="screen-label">System Snapshot</span>
+                <span class="stage-badge">Selected Work</span>
+              </div>
+
+              <h2>Operational software designed for clarity, control, and daily use.</h2>
+
+              <ul class="stage-list">
+                {
+                  siteMetadata.hero.proofPoints.map((item) => (
+                    <li>{item}</li>
+                  ))
+                }
+              </ul>
+
+              <figure class="hero-shot">
+                <img
+                  class="stage-screen"
+                  src="/project-screens/fleetvigo-dashboard-crop.png"
+                  alt=""
+                  loading="eager"
+                />
+              </figure>
+            </div>
+          </div>
+
+          <div class="showcase-plane showcase-plane--secondary" data-stage-layer>
+            <span>{siteMetadata.availability}</span>
+            <div class="mini-orbit">
+              <span>Fintech</span>
+              <span>Insurance</span>
+              <span>Payments</span>
+              <span>Operations</span>
+            </div>
+          </div>
+
+          <div class="showcase-ring" data-stage-layer></div>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Selected Work</p>
+          <h2>Selected work across payments, insurance, and operations.</h2>
+          <p>
+            These projects reflect the kind of software I enjoy building most: products with
+            real business use, operational depth, and interfaces that need to feel clear and dependable.
+          </p>
+        </div>
+
+        <div class="project-list">
+          {
+            featuredProjects.map((project, index) => (
+              <article
+                class:list={[
+                  "project-story",
+                  index % 2 === 1 && "project-story--reverse",
+                ]}
+                data-reveal
+              >
+                <div class="project-story__copy">
+                  <p class="project-label">{projectLabels[project.id]}</p>
+
+                  <div class="project-story__title-row">
+                    <h3>{project.data.title}</h3>
+                    {
+                      project.data.liveUrl ? (
+                        <a
+                          class="project-link"
+                          href={project.data.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {projectSiteLabels[project.id] ?? "Official site"}
+                        </a>
+                      ) : null
+                    }
+                  </div>
+
+                  <p class="project-tagline">{project.data.tagline}</p>
+
+                  <div class="project-story__facts">
+                    <div>
+                      <span class="fact-label">What the business needed</span>
+                      <p>{project.data.summary}</p>
+                    </div>
+                    <div>
+                      <span class="fact-label">What I owned</span>
+                      <p>{project.data.role}</p>
+                    </div>
+                    <div>
+                      <span class="fact-label">Why it mattered</span>
+                      <p>{project.data.outcome}</p>
+                    </div>
+                  </div>
+
+                  <ul class="stack-list" aria-label={`${project.data.title} tech stack`}>
+                    {
+                      project.data.stack.map((item) => (
+                        <li>{item}</li>
+                      ))
+                    }
+                  </ul>
+                </div>
+
+                {
+                  project.id === "fleetvigo-oms" ? (
+                    <div class="project-story__media project-story__media--fleetvigo">
+                      <figure class="device-frame device-frame--wide" data-depth>
+                        <img
+                          class="device-image"
+                          src={project.data.screens?.[0] ?? project.data.coverImage}
+                          alt={`${project.data.title} dashboard screen`}
+                          loading="lazy"
+                        />
+                      </figure>
+                      <figure class="device-frame device-frame--floating" data-depth>
+                        <img
+                          class="device-image device-image--top"
+                          src={project.data.screens?.[1] ?? project.data.coverImage}
+                          alt={`${project.data.title} workflow screen`}
+                          loading="lazy"
+                        />
+                      </figure>
+                    </div>
+                  ) : project.id === "feedme-payment" ? (
+                    <div class="project-story__media project-story__media--feedme">
+                      <div class="device-stack">
+                        <figure class="device-frame device-frame--desktop">
+                          <img
+                            class="device-image device-image--reference"
+                            src={project.data.screens?.[0] ?? project.data.coverImage}
+                            alt={`${project.data.title} desktop product view`}
+                            loading="lazy"
+                          />
+                        </figure>
+                        <figure class="device-frame device-frame--mobile">
+                          <img
+                            class="device-image device-image--reference"
+                            src={project.data.screens?.[1] ?? project.data.screens?.[0] ?? project.data.coverImage}
+                            alt={`${project.data.title} mobile product view`}
+                            loading="lazy"
+                          />
+                        </figure>
+                      </div>
+                    </div>
+                  ) : project.id === "ezsub" ? (
+                    <div class="project-story__media project-story__media--ezsub">
+                      <figure class="device-frame device-frame--card">
+                        <img
+                          class="device-image device-image--reference"
+                          src={project.data.screens?.[0] ?? project.data.coverImage}
+                          alt={`${project.data.title} award showcase`}
+                          loading="lazy"
+                        />
+                      </figure>
+                      <figure class="device-frame device-frame--ezsub-float" data-depth>
+                        <img
+                          class="device-image device-image--reference"
+                          src={project.data.screens?.[1] ?? project.data.screens?.[0] ?? project.data.coverImage}
+                          alt={`${project.data.title} interface collage`}
+                          loading="lazy"
+                        />
+                      </figure>
+                    </div>
+                  ) : (
+                    <div class="project-story__media project-story__media--single">
+                      <figure class="device-frame device-frame--card">
+                        <img
+                          class="device-image device-image--reference"
+                          src={project.data.screens?.[0] ?? project.data.coverImage}
+                          alt={`${project.data.title} product view`}
+                          loading="lazy"
+                        />
+                      </figure>
+                    </div>
+                  )
+                }
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Additional Experience</p>
+          <h2>Other products built around useful, real-world workflows.</h2>
+        </div>
+
+        <div class="supporting-grid" data-reveal>
+          {
+            supportingProjects.map((project) => (
+              <article class="supporting-item">
+                <strong>{project.data.title}</strong>
+                <p>{project.data.summary}</p>
+                <small>{project.data.role}</small>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">{siteMetadata.about.kicker}</p>
+          <h2>{siteMetadata.about.title}</h2>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-copy glass-panel" data-reveal>
+            <figure class="about-portrait">
+              <img src="/me.png" alt={`${siteMetadata.name} portrait`} loading="lazy" />
+            </figure>
+            <div class="about-copy__text">
+              {
+                siteMetadata.about.paragraphs.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="about-highlights glass-panel" data-reveal>
+            <p class="fit-title">Why that matters to a founder:</p>
+            <ul class="fit-list">
+              {
+                siteMetadata.about.highlights.map((item) => (
+                  <li>{item}</li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contact">
+        <div class="contact-shell glass-panel" data-reveal>
+          <p class="section-kicker">{siteMetadata.contact.kicker}</p>
+          <h2>{siteMetadata.contact.heading}</h2>
+          <p>{siteMetadata.contact.note}</p>
+
+          <div class="contact-actions">
+            <a
+              class="button button--primary"
+              href={siteMetadata.primaryCTA.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {siteMetadata.primaryCTA.label}
+            </a>
+            <a class="button button--secondary" href={siteMetadata.resumeUrl} target="_blank" rel="noreferrer">
+              View Resume
+            </a>
+          </div>
+
+          <div class="contact-meta">
+            <a href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</a>
+            <span>{siteMetadata.location}</span>
+          </div>
+
+          <ul class="hero-socials hero-socials--footer" aria-label="Social links">
+            {
+              siteMetadata.socialLinks.map((socialLink) => (
+                <li>
+                  <a href={socialLink.href} target="_blank" rel="noreferrer" aria-label={socialLink.label}>
+                    <SocialIcon name={socialLink.id} />
+                    <span>{socialLink.label}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <MotionController />
+  </div>
+</Layout>

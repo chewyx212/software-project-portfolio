@@ -1,0 +1,95 @@
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  const initMotion = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.dataset.motion = "reduced";
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroItems = Array.from(document.querySelectorAll("[data-hero-item]"));
+    if (heroItems.length) {
+      gsap.fromTo(
+        heroItems,
+        { autoAlpha: 0, y: 28 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.9,
+          stagger: 0.12,
+          ease: "power3.out",
+          delay: 0.15,
+        },
+      );
+    }
+
+    const stageLayers = Array.from(document.querySelectorAll("[data-stage-layer]"));
+    if (stageLayers.length) {
+      gsap.fromTo(
+        stageLayers,
+        { autoAlpha: 0, y: 48, scale: 0.96 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          stagger: 0.18,
+          ease: "power3.out",
+          delay: 0.25,
+        },
+      );
+    }
+
+    const revealElements = Array.from(document.querySelectorAll("[data-reveal]"));
+    revealElements.forEach((element) => {
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0, y: 40 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 82%",
+            once: true,
+          },
+        },
+      );
+    });
+
+    const depthElements = Array.from(document.querySelectorAll("[data-depth]"));
+    depthElements.forEach((element, index) => {
+      gsap.to(element, {
+        yPercent: index % 2 === 0 ? -10 : 8,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.7,
+        },
+      });
+    });
+
+    const header = /** @type {HTMLElement | null} */ (document.querySelector("[data-header]"));
+    if (header) {
+      ScrollTrigger.create({
+        start: 24,
+        onUpdate: (self) => {
+          header.classList.toggle("is-scrolled", self.scroll() > 30);
+        },
+      });
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMotion, { once: true });
+  } else {
+    initMotion();
+  }
+</script>

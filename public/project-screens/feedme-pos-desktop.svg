@@ -1,0 +1,112 @@
+<svg width="1320" height="860" viewBox="0 0 1320 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1320" height="860" rx="40" fill="#F4F5FA"/>
+  <rect x="0" y="0" width="1320" height="860" rx="40" fill="#F5F7FC"/>
+  <rect x="0" y="0" width="1320" height="64" rx="40" fill="#EDEFF6"/>
+  <circle cx="30" cy="32" r="10" fill="#FF5F57"/>
+  <circle cx="58" cy="32" r="10" fill="#FEBC2E"/>
+  <circle cx="86" cy="32" r="10" fill="#28C840"/>
+  <text x="660" y="40" fill="#4F5565" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">FeedMe POS</text>
+
+  <rect x="0" y="64" width="264" height="796" fill="#EEF1F8"/>
+  <rect x="0" y="64" width="68" height="64" fill="#4A7EFF"/>
+  <path d="M42 96H24M24 96L32 88M24 96L32 104" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="68" y="64" width="820" height="64" fill="white"/>
+  <text x="98" y="102" fill="#9299A9" font-family="Arial, sans-serif" font-size="24">Search menu</text>
+  <path d="M842 84L860 102M860 84L842 102" stroke="#7A7E88" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="0" y="128" width="264" height="58" fill="#3A3C44"/>
+  <text x="18" y="165" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="700">Starters</text>
+  <text x="18" y="220" fill="#4D515D" font-family="Arial, sans-serif" font-size="18">Main Courses</text>
+  <text x="18" y="278" fill="#4D515D" font-family="Arial, sans-serif" font-size="18">Desserts</text>
+  <text x="18" y="336" fill="#4D515D" font-family="Arial, sans-serif" font-size="18">Hot Beverages</text>
+  <text x="18" y="394" fill="#4D515D" font-family="Arial, sans-serif" font-size="18">Breakfast</text>
+
+  <rect x="264" y="128" width="614" height="732" fill="#F6F7FB"/>
+  <g>
+    <rect x="280" y="146" width="174" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+    <rect x="470" y="146" width="174" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+    <rect x="660" y="146" width="202" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+
+    <rect x="280" y="320" width="174" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+    <rect x="470" y="320" width="174" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+    <rect x="660" y="320" width="202" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+
+    <rect x="280" y="494" width="174" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+    <rect x="470" y="494" width="174" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+    <rect x="660" y="494" width="202" height="158" rx="12" fill="white" stroke="#D8DCE7"/>
+  </g>
+
+  <g opacity="0.96">
+    <rect x="288" y="154" width="158" height="86" rx="10" fill="#C9D4E8"/>
+    <rect x="478" y="154" width="158" height="86" rx="10" fill="#BC8D56"/>
+    <rect x="668" y="154" width="186" height="86" rx="10" fill="#D9E4DE"/>
+
+    <rect x="288" y="328" width="158" height="86" rx="10" fill="#BFDCC8"/>
+    <rect x="478" y="328" width="158" height="86" rx="10" fill="#D9C69C"/>
+    <rect x="668" y="328" width="186" height="86" rx="10" fill="#A8C08B"/>
+
+    <rect x="288" y="502" width="158" height="86" rx="10" fill="#8A603A"/>
+    <rect x="478" y="502" width="158" height="86" rx="10" fill="#B8A47B"/>
+    <rect x="668" y="502" width="186" height="86" rx="10" fill="#B8D8B6"/>
+  </g>
+
+  <g fill="#404550" font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    <text x="292" y="268">S03. cs</text>
+    <text x="480" y="268">S04. Nachos</text>
+    <text x="670" y="268">S05. Fried Meatball</text>
+    <text x="292" y="442">S06. Calamari</text>
+    <text x="480" y="442">S07. Mushroom Soup</text>
+    <text x="670" y="442">S08. Salad Bowl</text>
+    <text x="292" y="616">S09. Super Salad</text>
+    <text x="480" y="616">S10. Bread Delight</text>
+    <text x="670" y="616">S11. Prawn Lover</text>
+  </g>
+
+  <rect x="878" y="64" width="442" height="796" fill="white"/>
+  <circle cx="932" cy="102" r="26" fill="#FF8B2B"/>
+  <path d="M922 100H942M926 100L929 90H935L938 100M927 104H937L935 112H929L927 104Z" fill="white"/>
+  <text x="978" y="98" fill="#3D414C" font-family="Arial, sans-serif" font-size="28" font-weight="700">02</text>
+  <text x="978" y="126" fill="#7A7F89" font-family="Arial, sans-serif" font-size="18">Draft - ...</text>
+
+  <circle cx="1128" cy="102" r="24" fill="white" stroke="#D8DCE7"/>
+  <circle cx="1186" cy="102" r="24" fill="white" stroke="#D8DCE7"/>
+  <circle cx="1260" cy="102" r="24" fill="#33B95A"/>
+
+  <g font-family="Arial, sans-serif" font-size="18">
+    <circle cx="920" cy="188" r="22" fill="#F3F4FA" stroke="#CDD2E0"/>
+    <text x="912" y="195" fill="#5D6270">1</text>
+    <text x="955" y="192" fill="#D15E4D" font-size="18" font-weight="700">S04 Nachos</text>
+    <text x="1250" y="192" fill="#434853" text-anchor="end">18.00</text>
+
+    <circle cx="920" cy="270" r="22" fill="#F3F4FA" stroke="#CDD2E0"/>
+    <text x="912" y="277" fill="#5D6270">1</text>
+    <text x="955" y="274" fill="#D15E4D" font-size="18" font-weight="700">S06 Calamari</text>
+    <text x="1250" y="274" fill="#434853" text-anchor="end">0.00</text>
+  </g>
+
+  <g fill="#6D7280" font-family="Arial, sans-serif" font-size="17">
+    <text x="900" y="610">Bill remark</text>
+    <text x="900" y="652">Subtotal</text>
+    <text x="900" y="682">SERVICE CHARGE (10%)</text>
+    <text x="900" y="712">SST (6%)</text>
+    <text x="900" y="742">Rounding</text>
+    <text x="1248" y="652" text-anchor="end">18.00</text>
+    <text x="1248" y="682" text-anchor="end">1.80</text>
+    <text x="1248" y="712" text-anchor="end">1.08</text>
+    <text x="1248" y="742" text-anchor="end">0.02</text>
+  </g>
+
+  <g>
+    <rect x="902" y="770" width="126" height="92" rx="12" fill="#F8F9FC" stroke="#D8DCE7"/>
+    <rect x="1040" y="770" width="126" height="92" rx="12" fill="#F8F9FC" stroke="#D8DCE7"/>
+    <rect x="1178" y="770" width="126" height="92" rx="12" fill="#F8F9FC" stroke="#D8DCE7"/>
+    <text x="965" y="832" fill="#4A7EFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">More</text>
+    <text x="1103" y="832" fill="#4A7EFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Print</text>
+    <text x="1241" y="832" fill="#4A7EFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Send</text>
+  </g>
+
+  <rect x="902" y="874" width="402" height="74" rx="14" fill="#4A7EFF"/>
+  <text x="934" y="920" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700">Payment</text>
+  <text x="1272" y="920" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="end">RM 20.90</text>
+</svg>
+
