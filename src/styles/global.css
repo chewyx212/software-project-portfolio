@@ -870,7 +870,7 @@ h3 {
 }
 
 .project-story__media--fleetvigo {
-  min-height: 31rem;
+  min-height: 24.5rem;
 }
 
 .project-story__media--feedme,
@@ -879,9 +879,14 @@ h3 {
   min-height: 22rem;
 }
 
+.project-story__media--feedme {
+  min-height: 24.5rem;
+}
+
 .project-story__media--ezsub {
   display: grid;
   align-items: center;
+  min-height: 24.5rem;
 }
 
 .device-frame {
@@ -899,15 +904,23 @@ h3 {
 
 .device-frame--wide {
   position: absolute;
-  inset: 0 4.8rem 0 0;
+  inset: 0.1rem 2.35rem 0.45rem 0;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(151, 199, 255, 0.14);
+  box-shadow: 0 22px 56px rgba(0, 6, 20, 0.24);
 }
 
 .device-frame--floating {
   position: absolute;
   right: 0;
-  bottom: 1rem;
-  width: min(38%, 18rem);
-  aspect-ratio: 0.77 / 1;
+  bottom: 0.35rem;
+  width: min(60%, 20.4rem);
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(193, 223, 255, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 34px 86px rgba(0, 6, 20, 0.46);
+  z-index: 2;
 }
 
 .device-frame--desktop {
@@ -966,7 +979,7 @@ h3 {
 .project-story__media--feedme .device-image--reference {
   padding: 0;
   object-fit: cover;
-  object-position: left top;
+  object-position: center top;
   background: transparent;
 }
 
@@ -974,6 +987,69 @@ h3 {
   border: none;
   background: transparent;
   box-shadow: none;
+}
+
+.project-story__media--ezsub .device-frame--card,
+.project-story__media--ezsub .device-frame--ezsub-float {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(151, 199, 255, 0.14);
+  background: transparent;
+  min-height: unset;
+}
+
+.project-story__media--ezsub .device-frame--card {
+  position: absolute;
+  inset: 0.1rem 2.35rem 0.45rem 0;
+  width: auto;
+  box-shadow: 0 22px 56px rgba(0, 6, 20, 0.24);
+}
+
+.project-story__media--ezsub .device-frame--ezsub-float {
+  right: 0;
+  bottom: 0.35rem;
+  width: min(60%, 20.4rem);
+  border: 1px solid rgba(193, 223, 255, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 34px 86px rgba(0, 6, 20, 0.46);
+  z-index: 2;
+}
+
+.project-story__media--ezsub .device-image--reference {
+  object-position: center top;
+}
+
+.project-story__media--feedme .device-stack {
+  min-height: 24.5rem;
+}
+
+.project-story__media--feedme .device-frame--desktop,
+.project-story__media--feedme .device-frame--mobile {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1.6rem;
+  min-height: unset;
+}
+
+.project-story__media--feedme .device-frame--desktop {
+  position: absolute;
+  inset: 0.1rem 2.35rem 0.45rem 0;
+  width: auto;
+  border: 1px solid rgba(151, 199, 255, 0.14);
+  box-shadow: 0 22px 56px rgba(0, 6, 20, 0.24);
+}
+
+.project-story__media--feedme .device-frame--mobile {
+  right: 0;
+  bottom: 0.35rem;
+  width: min(60%, 20.4rem);
+  border: 1px solid rgba(193, 223, 255, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 34px 86px rgba(0, 6, 20, 0.46);
+  z-index: 2;
 }
 
 .supporting-grid {
@@ -1317,14 +1393,16 @@ h3 {
   }
 
   .project-story__media--fleetvigo {
-    min-height: 18rem;
+    width: 100%;
+    min-height: 14rem;
   }
 
   .project-story__media--feedme,
   .project-story__media--single,
   .project-story__media--ezsub,
   .device-stack {
-    min-height: 15rem;
+    width: 100%;
+    min-height: 14rem;
   }
 
   .device-stack {
@@ -1332,8 +1410,10 @@ h3 {
   }
 
   .device-frame--floating {
-    width: 38%;
-    bottom: 0.35rem;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 68%;
   }
 
   .device-frame--desktop {
@@ -1347,10 +1427,52 @@ h3 {
     bottom: 0;
   }
 
-  .device-frame--ezsub-float {
-    right: -0.2rem;
-    bottom: -0.5rem;
-    width: 42%;
+  .device-frame--wide {
+    inset: auto;
+    top: 0;
+    left: 0;
+    width: calc(100% - 1.2rem);
+  }
+
+  .project-story__media--feedme {
+    min-height: 14rem;
+  }
+
+  .project-story__media--ezsub {
+    min-height: 14rem;
+  }
+
+  .project-story__media--feedme .device-stack {
+    min-height: 14rem;
+  }
+
+  .project-story__media--feedme .device-frame--desktop {
+    inset: auto;
+    top: 0;
+    left: 0;
+    width: calc(100% - 1.2rem);
+  }
+
+  .project-story__media--feedme .device-frame--mobile {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 68%;
+  }
+
+  .project-story__media--ezsub .device-frame--card {
+    inset: auto;
+    top: 0;
+    left: 0;
+    width: calc(100% - 1.2rem);
+  }
+
+  .project-story__media--ezsub .device-frame--ezsub-float {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    width: 68%;
+    box-shadow: 0 28px 72px rgba(0, 6, 20, 0.42);
   }
 
   .glass-panel,

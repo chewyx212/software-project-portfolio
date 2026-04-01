@@ -13,11 +13,11 @@ stack:
 outcome: "The work helped improve delivery quality, frontend maintainability, and the overall dependability of a platform used in day-to-day adviser workflows."
 coverImage: "/project-screens/ezsub-award-3.jpg"
 screens:
-  - "/project-screens/ezsub-award-3.jpg"
   - "/project-screens/ezsub-award-1.jpg"
+  - "/project-screens/ezsub-award-3.jpg"
 liveUrl: "https://ux-design-awards.com/winners/2025-2-ezsub-streamlining-insurance-submissions"
 featured: true
 visibility: "private-summary"
-order: 3
+order: 2
 ---
 This reflects the kind of product work I value most: clear interfaces, dependable behavior, and steady delivery in a complex environment.

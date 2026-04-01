@@ -6,7 +6,8 @@ export const siteMetadata = {
   email: "paulyx212@gmail.com",
   description:
     "Portfolio of Paul Chew, a frontend-focused full stack engineer building products across insurance, merchant software, and operations.",
-  availability: "Open to product collaborations, freelance builds, and focused MVP work.",
+  availability:
+    "Open to product collaborations, freelance builds, and focused MVP work.",
   resumeUrl: "/documents/Chew_Yuen_Xuen_Resume_2026.pdf",
   primaryCTA: {
     label: "Let's Chat Now!",
@@ -48,11 +49,12 @@ export const siteMetadata = {
       {
         eyebrow: "Experience",
         value: "5+ Years",
-        detail: "Shipping production software across insurance, merchant platforms, payments, and operations.",
+        detail:
+          "Shipping production software across insurance, merchant platforms, payments, and operations.",
       },
       {
         eyebrow: "Core Domains",
-        items: ["Insurance", "Merchant", "Payments", "Operations"],
+        items: ["Systems", "Operations", "Payments", "AI"],
       },
       {
         eyebrow: "Selected Work",
@@ -68,8 +70,7 @@ export const siteMetadata = {
   about: {
     kicker: "About Me",
     title: "Product-minded engineering for complex domains.",
-    lead:
-      "Clear UX, dependable systems, and end-to-end delivery.",
+    lead: "Clear UX, dependable systems, and end-to-end delivery.",
     summary:
       "Frontend-focused full stack engineer with experience across insurance, merchant platforms, payments, and internal operations software.",
     paragraphs: [
@@ -86,7 +87,6 @@ export const siteMetadata = {
   contact: {
     kicker: "Contact",
     heading: "Need a builder who can own product and delivery?",
-    note:
-      "Messenger is the fastest way to reach me for freelance work, MVPs, and product builds.",
+    note: "Messenger is the fastest way to reach me for freelance work, MVPs, and product builds.",
   },
 } as const;
