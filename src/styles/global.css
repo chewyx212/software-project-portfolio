@@ -533,6 +533,8 @@ h3 {
   background: rgba(255, 255, 255, 0.04);
   color: var(--muted-strong);
   font-size: 0.84rem;
+  cursor: default;
+  pointer-events: none;
 }
 
 .hero-stat-card__list {
@@ -1069,6 +1071,22 @@ h3 {
   margin-top: 0.9rem;
 }
 
+.supporting-item__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.supporting-item__stack span {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted-strong);
+  font-size: 0.78rem;
+}
+
 .pricing-shell {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
@@ -1292,27 +1310,20 @@ h3 {
 
   .site-header {
     width: min(100vw - 1rem, 32rem);
-    display: grid;
-    justify-items: start;
-    gap: 0.8rem;
-    padding: 0.9rem 0.95rem;
-    border-radius: 1.45rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0.7rem 0.9rem;
+    border-radius: 999px;
   }
 
-  .brand-copy strong,
-  .brand-copy small {
-    white-space: normal;
+  .brand-copy {
+    display: none;
   }
 
   .button {
     width: 100%;
-  }
-
-  .header-cta {
-    width: auto;
-    min-height: 2.7rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.92rem;
   }
 
   .hero,
@@ -1330,11 +1341,11 @@ h3 {
 
   h1 {
     white-space: normal;
-    font-size: clamp(3rem, 12vw, 4rem);
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
   }
 
   h2 {
-    font-size: clamp(2.15rem, 10vw, 3rem);
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
   }
 
   .hero-offer {

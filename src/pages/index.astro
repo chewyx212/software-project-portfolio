@@ -28,7 +28,7 @@ const projectSiteLabels: Record<string, string> = {
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Go to top">
         <span class="brand-mark brand-mark--photo">
-          <img src="/avatar-circle.png" alt="" loading="eager" />
+          <img src="/avatar-circle.png" alt="Paul Chew" loading="eager" />
         </span>
         <span class="brand-copy">
           <strong>{siteMetadata.name}</strong>
@@ -288,6 +288,9 @@ const projectSiteLabels: Record<string, string> = {
               <article class="supporting-item">
                 <strong>{project.data.title}</strong>
                 <p>{project.data.summary}</p>
+                <div class="supporting-item__stack">
+                  {project.data.stack.map((s) => <span>{s}</span>)}
+                </div>
                 <small>{project.data.role}</small>
               </article>
             ))
